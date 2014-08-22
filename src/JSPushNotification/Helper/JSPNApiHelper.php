@@ -51,6 +51,10 @@ class JSPNApiHelper {
         
         return self::$instance;
     }
+    
+    public static function reset() {
+        self::$instance = NULL;
+    }
 
     /**
      * 

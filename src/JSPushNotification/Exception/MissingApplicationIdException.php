@@ -10,6 +10,6 @@ namespace JSPushNotification\Exception;
 
 use JSPushNotification\Common\Exception\JSPNException;
 
-class MissingApplicationIdException extends JSPNException {
+class MissingConfigException extends JSPNException {
 
 }

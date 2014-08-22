@@ -39,6 +39,8 @@ class JSPNResponse {
         unset($data[self::STATUS]);
         
         $this->error = new JSPNResponseError($data);
+        unset($data[self::ERROR]);
+        unset($data[self::MESSAGE]);
         
         foreach ($data as $key => $value) {
             $this->data[$key] = $value;

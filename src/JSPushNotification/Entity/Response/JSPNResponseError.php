@@ -26,7 +26,7 @@ class JSPNResponseError {
     public $message;
     
     public function __construct(array $data) {
-        $this->errorCode = (int)$data[self::ERROR_CODE];
-        $this->message   = $data[self::ERROR_MESSAGE];
+        $this->errorCode = (!empty($data[self::ERROR_CODE])) ? (int)$data[self::ERROR_CODE] : 0;
+        $this->message   = (!empty($data[self::ERROR_MESSAGE])) ? $data[self::ERROR_MESSAGE] : '';        
     }
 }

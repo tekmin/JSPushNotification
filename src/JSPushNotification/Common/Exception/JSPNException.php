@@ -19,7 +19,7 @@ class JSPNException extends \Exception {
     public function __construct($message = '', $code = 0, $previous = NULL) {
         $this->plainMessage = $message;
         
-        $message = 'Unexpected '. get_class($this) . " has been thrown. <br/> Message: $message";
+        $message = 'Unexpected '. get_class($this) . " has been thrown. Message: $message";
         
         parent::__construct($message, $code, $previous);
     }
