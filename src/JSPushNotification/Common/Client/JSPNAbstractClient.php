@@ -35,12 +35,12 @@ abstract class JSPNAbstractClient {
      */
     public function __construct($config = NULL) {
         
+        $configManager = JSPNConfigManager::getInstance();
         if($config == NULL){
-            $configManager = JSPNConfigManager::getInstance();
             $this->config = $configManager->getConfig();
         }
         else {
-            $this->config = JSPNConfigManager::mergeConfig($config);
+            $this->config = $configManager->mergeConfig($config);
         }
     }
     
@@ -61,7 +61,7 @@ abstract class JSPNAbstractClient {
         $response = $this->getClient()->post($url, array(
             'body'  => $parameter
         ));
-        
+
         return new JSPNResponse(get_object_vars(json_decode($response->getBody())));
     }
     

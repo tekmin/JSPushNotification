@@ -17,7 +17,7 @@ class ClientTest extends PHPUnit_Framework_TestCase {
     public function testRegisterDevice($userId, $deviceToken, $platformCode, $expectedResult) {
         $client = new Client();
         $response = $client->registerDevice($userId, $deviceToken, $platformCode);
-        
+
         $this->assertTrue($response instanceof JSPNResponse);
         $this->assertEquals($response->status, $expectedResult);
     }

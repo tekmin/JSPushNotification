@@ -8,6 +8,8 @@
 
 namespace JSPushNotification\Config;
 
+use JSPushNotification\Exception\MissingConfigException;
+
 class JSPNConfigManager {
 
     /**
@@ -15,6 +17,10 @@ class JSPNConfigManager {
      * @var \JSPushNotification\Config\JSPNConfigManager
      */
     private static $instance;
+    
+    private $requiredConfig = array(
+        'application_id'
+    );
     
     /**
      *
@@ -46,6 +52,10 @@ class JSPNConfigManager {
         return self::$instance;
     }
     
+    public static function reset() {
+        self::$instance = NULL;
+    }
+    
     /**
      * Merge user config with default config
      * 
@@ -53,6 +63,8 @@ class JSPNConfigManager {
      */
     public function mergeConfig(array $config) {
         $this->config = array_merge($this->config, $config);
+        
+        $this->checkRequiredConfig();
     }
     
     /**
@@ -71,11 +83,26 @@ class JSPNConfigManager {
     }
     
     /**
+     * 
+     * @throws MissingConfigException
+     */
+    private function checkRequiredConfig() {
+        foreach ($this->requiredConfig as $key) {
+            if(empty($this->config[$key])) {
+                throw new MissingConfigException("Config with key '$key' is missing in the config provided.");
+            }
+        }
+        
+    }
+    
+    /**
      * Get config load from default config file
      * 
      * @return array
      */
     public function getConfig() {
+        $this->checkRequiredConfig();
+        
         return $this->config;
     }
 }
