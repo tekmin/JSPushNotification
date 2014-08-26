@@ -1,14 +1,14 @@
 {
-    "name": "miniram/js-push-notification",
+    "name": "tekmin/js-push-notification",
     "description": "JS Push Notification SDK",
     "keywords": ["JS", "sdk", "push notification"],
     "type": "library",
-    "homepage": "https://github.com/miniram/JSPushNotification",
+    "homepage": "https://github.com/tekmin/JSPushNotification",
     "license": "",
     "authors": [
         {
             "name": "JS",
-            "homepage": "https://github.com/miniram/JSPushNotification/graphs/contributors"
+            "homepage": "https://github.com/tekmin/JSPushNotification/graphs/contributors"
         }
     ],
     "require": {
