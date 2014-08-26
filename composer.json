@@ -1,8 +1,5 @@
 {
     "name": "jobstreet/js-push-notification",
-    "replace": {
-        "tekmin/js-push-notification": "dev-master"
-    },
     "description": "JS Push Notification SDK",
     "keywords": ["JS", "sdk", "push notification"],
     "type": "library",
