@@ -19,7 +19,7 @@ class JSPNConfigManager {
     private static $instance;
     
     private $requiredConfig = array(
-        'application_id'
+        'applicationId'
     );
     
     /**
@@ -31,7 +31,7 @@ class JSPNConfigManager {
     private function __construct(){
         if(defined('JSPN_CONFIG_PATH')) {
             $configFile = constant('JSPN_CONFIG_PATH');
-        } else {		
+        } else {	
             $configFile = implode(DIRECTORY_SEPARATOR, array(dirname(__FILE__), "..", "jspn_config.php"));
         }
         
