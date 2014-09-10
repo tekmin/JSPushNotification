@@ -33,7 +33,7 @@ abstract class JSPNAbstractClient {
      * 
      * @param array $config
      */
-    public function __construct($config = NULL) {
+    public function __construct(array $config = NULL) {
         
         $configManager = JSPNConfigManager::getInstance();
         if($config == NULL){

@@ -80,6 +80,11 @@ class JSPNApiHelper {
         $configManager = JSPNConfigManager::getInstance();
         $config = $configManager->getConfig();
         
+        if(!empty($config['customDomain'])) {
+            $this->baseUrl = $config['customDomain'];
+            return;
+        }
+        
         if($config['isSandbox'] == FALSE) {
             $this->baseUrl = self::$DOMAIN_MAP['live'];
         }

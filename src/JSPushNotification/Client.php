@@ -25,9 +25,10 @@ class Client extends JSPNAbstractClient {
      * @param int $userId
      * @param string $deviceToken
      * @param int $platformCode
+     * @param string $appVersion
      * @return stdClass
      */
-    public function registerDevice($userId, $deviceToken, $platformCode) {
+    public function registerDevice($userId, $deviceToken, $platformCode, $appVersion = NULL) {
         if(empty($userId)) {
             throw new InvalidParameterException('Invalid user id has been provided in parameter 1 in ' . __METHOD__ . '()');
         }
