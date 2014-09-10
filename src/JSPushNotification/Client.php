@@ -19,6 +19,7 @@ class Client extends JSPNAbstractClient {
     const PARAM_MESSAGE         = 'message';
     const PARAM_DATA            = 'data';
     const PARAM_OPTIONS         = 'options';
+    const PARAM_APP_VERSION     = 'app_version';
     
     /**
      * 
@@ -45,7 +46,8 @@ class Client extends JSPNAbstractClient {
         return $this->request('register.php', array(
             self::PARAM_USER_ID         => $userId,
             self::PARAM_DEVICE_TOKEN    => $deviceToken,
-            self::PARAM_PLATFORM_CODE   => $platformCode
+            self::PARAM_PLATFORM_CODE   => $platformCode,
+            self::PARAM_APP_VERSION     => $appVersion
         ));
     }
     
