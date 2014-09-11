@@ -92,5 +92,23 @@ class Client extends JSPNAbstractClient {
             self::PARAM_OPTIONS => $options
         ));
     }
+    
+    /**
+     * 
+     * @param int $userId
+     * @param array $notification
+     * @return stdClass
+     * @throws InvalidParameterException
+     */
+    public function publishMultipleMessage($userId, array $notification = array()) {
+        if(empty($userId)) {
+            throw new InvalidParameterException('Invalid user id has been provided in parameter 1 in ' . __METHOD__ . '()');
+        }
+        
+        return $this->request('publish.php', array(
+            self::PARAM_USER_ID => $userId,
+            self::PARAM_DATA    => $notification,
+        ));
+    }
 
 }
