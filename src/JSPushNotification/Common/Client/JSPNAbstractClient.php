@@ -17,11 +17,12 @@ use JSPushNotification\Entity\JSPNResponse;
 abstract class JSPNAbstractClient {
 
     const PARAM_APPLICATION_ID  = 'application';
+    const PARAM_SKD_VERSION     = 'sdk_version';
 
     const METHOD_GET = 'GET';
     const METHOD_POST = 'POST';
     
-    const VERSION = '1.0.0';
+    const VERSION = '2';
     
     /**
      *
@@ -58,6 +59,7 @@ abstract class JSPNAbstractClient {
      */
     protected function request($url, $parameter) {
         $parameter[self::PARAM_APPLICATION_ID] = $this->config['applicationId'];
+        $parameter[self::PARAM_SDK_VERSION] = self::VERSION;
         $response = $this->getClient()->post($url, array(
             'body'  => $parameter
         ));
