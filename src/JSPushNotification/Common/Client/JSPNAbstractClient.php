@@ -17,7 +17,7 @@ use JSPushNotification\Entity\JSPNResponse;
 abstract class JSPNAbstractClient {
 
     const PARAM_APPLICATION_ID  = 'application';
-    const PARAM_SKD_VERSION     = 'sdk_version';
+    const PARAM_SDK_VERSION     = 'sdk_version';
 
     const METHOD_GET = 'GET';
     const METHOD_POST = 'POST';
