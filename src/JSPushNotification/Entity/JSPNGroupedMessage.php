@@ -1,7 +1,7 @@
 <?php
 
 /**
- * JSPNGroupedMessage entity
+ * JSPNGroupNotification entity
  *
  * @author Tek Min <tekmin@jobstreet.com>
  * @package JSPushNotification
@@ -11,7 +11,7 @@ namespace JSPushNotification\Entity;
 
 use JSPushNotification\Entity\JSPNPlatformNotification;
 
-class JSPNGroupedMessage {
+class JSPNGroupNotification {
 
     /**
      *
