@@ -10,6 +10,7 @@ namespace JSPushNotification;
 use JSPushNotification\Common\Client\JSPNAbstractClient;
 use JSPushNotification\Exception\InvalidParameterException;
 use JSPushNotification\Validator\JSPNPlatform as JSPNPlatformValidator;
+use JSPushNotification\Entity\JSPNGroupedMessage;
 
 class Client extends JSPNAbstractClient {
     
@@ -96,18 +97,18 @@ class Client extends JSPNAbstractClient {
     /**
      * 
      * @param int $userId
-     * @param array $notification
+     * @param JSPNGroupedMessage $groupedNotification
      * @return stdClass
      * @throws InvalidParameterException
      */
-    public function publishMultipleMessage($userId, array $notification = array()) {
+    public function publishGroupedMessage($userId, JSPNGroupedMessage $groupedNotification) {
         if(empty($userId)) {
             throw new InvalidParameterException('Invalid user id has been provided in parameter 1 in ' . __METHOD__ . '()');
         }
         
         return $this->request('publish.php', array(
             self::PARAM_USER_ID => $userId,
-            self::PARAM_DATA    => $notification,
+            self::PARAM_DATA    => $groupedNotification->toArray(),
         ));
     }
 
