@@ -57,9 +57,9 @@ abstract class JSPNAbstractClient {
      * @param array $parameter
      * @return \JSPushNotification\Entity\JSPNResponse
      */
-    protected function request($url, $parameter) {
+    protected function request($url, $parameter, $version = self::VERSION) {
         $parameter[self::PARAM_APPLICATION_ID] = $this->config['applicationId'];
-        $parameter[self::PARAM_SDK_VERSION] = self::VERSION;
+        $parameter[self::PARAM_SDK_VERSION] = $version;
         $response = $this->getClient()->post($url, array(
             'body'  => $parameter
         ));
