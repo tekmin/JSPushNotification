@@ -91,7 +91,7 @@ class Client extends JSPNAbstractClient {
             self::PARAM_MESSAGE => $message,
             self::PARAM_DATA    => $data,
             self::PARAM_OPTIONS => $options
-        ));
+        ), 1);
     }
     
     /**
