@@ -85,9 +85,17 @@ class JSPNNotification {
      * @return array
      */
     public function toArray() {
+        foreach ($this->data as $key => &$value) {
+            $this->data[$key] = rawurlencode($value);
+        }
+        
+        foreach ($this->options as $key => &$value) {
+            $this->options[$key] = rawurlencode($value);
+        }
+        
         return array(
-            'version' => $this->version,
-            'message' => $this->message,
+            'version' => rawurlencode($this->version),
+            'message' => rawurlencode($this->message),
             'data'    => $this->data,
             'options' => $this->options,
         );
