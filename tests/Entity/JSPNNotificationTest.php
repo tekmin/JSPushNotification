@@ -20,8 +20,6 @@ class JSPNNotificationTest extends PHPUnit_Framework_TestCase {
     public function testConstructor() {
         $notification = new JSPNNotification($this->version);
         $this->assertEquals($notification->getVersion(), $this->version);;
-        
-        return $notification;
     }
 
     public function testAddDataArray() {
@@ -92,15 +90,11 @@ class JSPNNotificationTest extends PHPUnit_Framework_TestCase {
         $notification = new JSPNNotification($this->version);
         $notification->setData($this->data1);
         $this->assertEquals($this->data1, $notification->getData());
-        
-        return $notification;
     }
 
     public function testSetOptions() {
         $notification = new JSPNNotification($this->version);
         $notification->setOptions($this->options1);
         $this->assertEquals($this->options1, $notification->getOptions());
-        
-        return $notification;
     }
 }

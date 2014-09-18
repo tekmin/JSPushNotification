@@ -17,14 +17,14 @@ class JSPNGroupNotification {
      *
      * @var array
      */
-    private $groupedNotifications = array();
+    private $groupNotifications = array();
     
     /**
      * 
      * @param JSPNPlatformNotification $notification
      */
     public function addPlatformNotification(JSPNPlatformNotification $notification) {
-        $this->groupedNotifications[] = $notification;
+        $this->groupNotifications[] = $notification;
     }
 
     /**
@@ -33,8 +33,8 @@ class JSPNGroupNotification {
      */
     public function toArray() {
         $array = array();
-        foreach ($this->groupedNotifications as $platformNotification) {
-           $array[$platformNotification->getKey()] = $platformNotification->toArray();
+        foreach ($this->groupNotifications as $platformNotification) {
+            $array = array_merge($array, $platformNotification->toArray());
         }
         
         return $array;
