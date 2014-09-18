@@ -47,7 +47,7 @@ abstract class JSPNPlatformNotification {
     public function toArray() {
         $array = array();
         foreach ($this->notifications as $notification) {
-            $array[] = $notification->toArray();
+            $array[$this->key][] = $notification->toArray();
         }
         
         return $array;
