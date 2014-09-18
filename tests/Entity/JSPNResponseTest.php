@@ -7,7 +7,6 @@
  */
 
 use JSPushNotification\Entity\JSPNResponse;
-use JSPushNotification\Entity\Response\JSPNResponseError;
 
 class JSPNResponseTest extends PHPUnit_Framework_TestCase {
 

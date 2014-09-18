@@ -5,6 +5,7 @@
  *
  * @package JSPushNotification
  */
+define('JSPN_CONFIG_PATH', __DIR__ . '/config.php');
 
 use JSPushNotification\Client;
 use JSPushNotification\Entity\JSPNResponse;

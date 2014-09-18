@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'applicationId' => '',
+    'applicationId' => '1400726882',
     'isSandbox'     => TRUE,
 );
 
