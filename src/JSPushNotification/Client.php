@@ -97,7 +97,7 @@ class Client extends JSPNAbstractClient {
     /**
      * 
      * @param int $userId
-     * @param JSPNGroupNotification $groupedNotification
+     * @param JSPNGroupNotification $groupNotification
      * @return stdClass
      * @throws InvalidParameterException
      */
