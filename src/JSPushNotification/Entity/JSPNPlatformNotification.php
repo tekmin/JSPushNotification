@@ -26,7 +26,7 @@ abstract class JSPNPlatformNotification {
 
     /**
      * 
-     * @param JSPNNotification $notifications
+     * @param JSPNNotification $notification
      */
     public function addNotification(JSPNNotification $notification) {
         $this->notifications[] = $notification;

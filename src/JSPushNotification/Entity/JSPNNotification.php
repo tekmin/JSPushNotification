@@ -47,9 +47,7 @@ class JSPNNotification {
      * @param array $data
      */
     public function addDataArray(array $data) {
-        foreach ($data as $key => $value) {
-            $this->data[$key] = $value;
-        }
+        $this->data = array_merge($this->data, $data);
     }
     
     /**
@@ -66,9 +64,7 @@ class JSPNNotification {
      * @param array $options
      */
     public function addOptionsArray(array $options) {
-        foreach ($options as $key => $value) {
-            $this->options[$key] = $value;
-        }
+        $this->options = array_merge($this->options, $options);
     }
     
     /**
@@ -131,5 +127,37 @@ class JSPNNotification {
      */
     public function setOptions(array $options) {
         $this->options = $options;
+    }
+    
+    /**
+     * 
+     * @return string
+     */
+    public function getVersion() {
+        return $this->version;
+    }
+    
+    /**
+     * 
+     * @return array
+     */
+    public function getMessage() {
+        return $this->message;
+    }
+    
+    /**
+     * 
+     * @return array
+     */
+    public function getData() {
+        return $this->data;
+    }
+    
+    /**
+     * 
+     * @return array
+     */
+    public function getOptions() {
+        return $this->options;
     }
 }
