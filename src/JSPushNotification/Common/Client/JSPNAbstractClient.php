@@ -9,7 +9,7 @@
 
 namespace JSPushNotification\Common\Client;
 
-use GuzzleHttp\Client as GuzzleClient;
+use Guzzle\Http\Client as GuzzleClient;
 use JSPushNotification\Config\JSPNConfigManager;
 use JSPushNotification\Helper\JSPNApiHelper;
 use JSPushNotification\Entity\JSPNResponse;
@@ -60,11 +60,10 @@ abstract class JSPNAbstractClient {
     protected function request($url, $parameter, $version = self::VERSION) {
         $parameter[self::PARAM_APPLICATION_ID] = $this->config['applicationId'];
         $parameter[self::PARAM_SDK_VERSION] = $version;
-        $response = $this->getClient()->post($url, array(
-            'body'  => $parameter
-        ));
+        $request = $this->getClient()->post($url, array(), $parameter);
+        $response = $request->send();
 
-        return new JSPNResponse(get_object_vars(json_decode($response->getBody())));
+        return new JSPNResponse($response->json());
     }
     
     /**
@@ -74,7 +73,7 @@ abstract class JSPNAbstractClient {
     protected function getClient() {
         if(!$this->client) {
             $apiHelper = JSPNApiHelper::getInstance();
-            $this->client = new GuzzleClient(array('base_url' => $apiHelper->getBaseUrl()));
+            $this->client = new GuzzleClient($apiHelper->getBaseUrl());
         }
         
         return $this->client;
