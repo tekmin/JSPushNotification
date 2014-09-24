@@ -126,22 +126,22 @@ class ClientTest extends PHPUnit_Framework_TestCase {
         $notification = new JSPNNotification('>=3.0.0');
         $notification->setMessage('This is the message');
         $notification->addData('addData', 'Data');
-        $notification->addDataArray(array(
+        $notification->appendData(array(
            'addDataArray' => 'Array' 
         ));
         $notification->addOptions('addOptions', 'Options');
-        $notification->addOptionsArray(array(
+        $notification->appendOptions(array(
             'addOptionsArray' => 'Array'
         ));
         
         $notification2 = new JSPNNotification('>=3.0.0');
         $notification2->setMessage('This is the message2');
         $notification2->addData('addData', 'Data');
-        $notification2->addDataArray(array(
+        $notification2->appendData(array(
            'addDataArray' => 'Array' 
         ));
         $notification2->addOptions('addOptions', 'Options');
-        $notification2->addOptionsArray(array(
+        $notification2->appendOptions(array(
             'addOptionsArray' => 'Array'
         ));
         

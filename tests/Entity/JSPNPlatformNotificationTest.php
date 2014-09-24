@@ -15,11 +15,11 @@ class JSPNPlatformNotificationTest extends PHPUnit_Framework_TestCase {
         $notification = new JSPNNotification('>=3.0.0');
         $notification->setMessage('This is the message');
         $notification->addData('addData', 'Data');
-        $notification->addDataArray(array(
+        $notification->appendData(array(
            'addDataArray' => 'Array' 
         ));
         $notification->addOptions('addOptions', 'Options');
-        $notification->addOptionsArray(array(
+        $notification->appendOptions(array(
             'addOptionsArray' => 'Array'
         ));
         

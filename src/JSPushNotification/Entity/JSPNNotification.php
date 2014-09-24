@@ -46,7 +46,7 @@ class JSPNNotification {
      * 
      * @param array $data
      */
-    public function addDataArray(array $data) {
+    public function appendData(array $data) {
         $this->data = array_merge($this->data, $data);
     }
     
@@ -63,7 +63,7 @@ class JSPNNotification {
      * 
      * @param array $options
      */
-    public function addOptionsArray(array $options) {
+    public function appendOptions(array $options) {
         $this->options = array_merge($this->options, $options);
     }
     
