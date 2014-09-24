@@ -25,7 +25,7 @@ class JSPNNotificationTest extends PHPUnit_Framework_TestCase {
     public function testAddDataArray() {
         $notification = new JSPNNotification($this->version);
         $notification->setData($this->data1);
-        $notification->addDataArray($this->data2);
+        $notification->appendData($this->data2);
         $this->assertEquals(array_merge($this->data1, $this->data2), $notification->getData());
     }
 
@@ -38,7 +38,7 @@ class JSPNNotificationTest extends PHPUnit_Framework_TestCase {
     public function testAddOptionsArray() {
         $notification = new JSPNNotification($this->version);
         $notification->setOptions($this->options1);
-        $notification->addOptionsArray($this->options2);
+        $notification->appendOptions($this->options2);
         $this->assertEquals(array_merge($this->options1, $this->options2), $notification->getOptions());
     }
 
@@ -52,11 +52,11 @@ class JSPNNotificationTest extends PHPUnit_Framework_TestCase {
         $notification = new JSPNNotification('>=3.0.0');
         $notification->setMessage('This is the message');
         $notification->addData('addData', 'Data');
-        $notification->addDataArray(array(
+        $notification->appendData(array(
            'addDataArray' => 'Array' 
         ));
         $notification->addOptions('addOptions', 'Options');
-        $notification->addOptionsArray(array(
+        $notification->appendOptions(array(
             'addOptionsArray' => 'Array'
         ));
         $this->assertEquals(array(

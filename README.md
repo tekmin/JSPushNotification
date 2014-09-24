@@ -4,7 +4,6 @@ JSPushNotification
 JobStreet.com Push Notification Service
 
 ##Installation
----
 
 Using Composer:
 
@@ -13,7 +12,6 @@ composer require jobstreet/js-push-notification dev-master
 ```
 
 ##Usage
----
 
 This is the minimal example that you'll need to have:
 
@@ -40,7 +38,6 @@ else {
 ```
 
 ##Configuration File
----
 You may want to create a client config file in other place. Here is the example of defining the config file:
 
 ```
@@ -51,7 +48,6 @@ require_once 'vendor/autoload.php';
 $client = new Client();
 ```
 
-<br/>
 config.php
 ```
 
@@ -63,7 +59,6 @@ return array(
 ```
 
 ##Documentation
----
 
 Coming Soon...
 
