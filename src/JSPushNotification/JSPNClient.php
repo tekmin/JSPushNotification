@@ -12,7 +12,7 @@ use JSPushNotification\Exception\InvalidParameterException;
 use JSPushNotification\Validator\JSPNPlatform as JSPNPlatformValidator;
 use JSPushNotification\Entity\JSPNGroupNotification;
 
-class Client extends JSPNAbstractClient {
+class JSPNClient extends JSPNAbstractClient {
     
     const PARAM_USER_ID         = 'user_id';
     const PARAM_DEVICE_TOKEN    = 'token';
