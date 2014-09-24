@@ -7,7 +7,7 @@
  */
 define('JSPN_CONFIG_PATH', __DIR__ . '/config.php');
 
-use JSPushNotification\Client;
+use JSPushNotification\JSPNClient;
 use JSPushNotification\Entity\JSPNResponse;
 use JSPushNotification\Entity\JSPNNotification;
 use JSPushNotification\Entity\JSPNAPNSNotification;
@@ -20,7 +20,7 @@ class ClientTest extends PHPUnit_Framework_TestCase {
      * @dataProvider userToRegisterDevice
      */
     public function testRegisterDevice($userId, $deviceToken, $platformCode, $expectedResult) {
-        $client = new Client();
+        $client = new JSPNClient();
         $response = $client->registerDevice($userId, $deviceToken, $platformCode);
 
         $this->assertTrue($response instanceof JSPNResponse);
@@ -31,7 +31,7 @@ class ClientTest extends PHPUnit_Framework_TestCase {
      * @expectedException \JSPushNotification\Exception\InvalidParameterException
      */
     public function testRegisterDeviceInvalidUserId() {
-        $client = new Client();
+        $client = new JSPNClient();
         $client->registerDevice('', '39b7dc856002786c0de3a5577b3bb0a6936e120b52ad2b8cf827ac2612faaba1', 3);
     }
     
@@ -39,7 +39,7 @@ class ClientTest extends PHPUnit_Framework_TestCase {
      * @expectedException \JSPushNotification\Exception\InvalidParameterException
      */
     public function testRegisterDeviceInvalidDeviceToken() {
-        $client = new Client();
+        $client = new JSPNClient();
         $client->registerDevice(9716635, '', 3);
     }
     
@@ -47,7 +47,7 @@ class ClientTest extends PHPUnit_Framework_TestCase {
      * @expectedException \JSPushNotification\Exception\InvalidParameterException
      */
     public function testRegisterDeviceInvalidPlatformCode() {
-        $client = new Client();
+        $client = new JSPNClient();
         $client->registerDevice(9716635, '39b7dc856002786c0de3a5577b3bb0a6936e120b52ad2b8cf827ac2612faaba1', 4);
     }
     
@@ -64,7 +64,7 @@ class ClientTest extends PHPUnit_Framework_TestCase {
      * @dataProvider messageToSendToUser
      */
     public function testPublishMessage($expectedResult, $userId, $message, $data = array(), $option = array()) {
-        $client = new Client();
+        $client = new JSPNClient();
         $response = $client->publishMessage($userId, $message, $data, $option);
         
         $this->assertTrue($response instanceof JSPNResponse);
@@ -75,7 +75,7 @@ class ClientTest extends PHPUnit_Framework_TestCase {
      * @expectedException \JSPushNotification\Exception\InvalidParameterException
      */
     public function testPublishMessageInvalidUserId() {
-        $client = new Client();
+        $client = new JSPNClient();
         $client->publishMessage('', 'Testing publish message function exception');
     }
     
@@ -91,7 +91,7 @@ class ClientTest extends PHPUnit_Framework_TestCase {
      * @dataProvider userToUnregisterDevice
      */
     public function testUnregisterDevice($userId, $deviceToken, $expectedResult) {
-        $client = new Client();
+        $client = new JSPNClient();
         $response = $client->unregisterDevice($userId, $deviceToken);
         
         $this->assertTrue($response instanceof JSPNResponse);
@@ -102,7 +102,7 @@ class ClientTest extends PHPUnit_Framework_TestCase {
      * @expectedException \JSPushNotification\Exception\InvalidParameterException
      */
     public function testUnregisterDeviceInvalidUserId() {
-        $client = new Client();
+        $client = new JSPNClient();
         $client->unregisterDevice('', '39b7dc856002786c0de3a5577b3bb0a6936e120b52ad2b8cf827ac2612faaba1');
     }
     
@@ -110,7 +110,7 @@ class ClientTest extends PHPUnit_Framework_TestCase {
      * @expectedException \JSPushNotification\Exception\InvalidParameterException
      */
     public function testUnregisterDeviceInvalidDeviceToken() {
-        $client = new Client();
+        $client = new JSPNClient();
         $client->unregisterDevice(9716635, '');
     }
     
@@ -122,7 +122,7 @@ class ClientTest extends PHPUnit_Framework_TestCase {
     }
     
     public function testPublishGroupMessage() {
-        $client = new Client();
+        $client = new JSPNClient();
         $notification = new JSPNNotification('>=3.0.0');
         $notification->setMessage('This is the message');
         $notification->addData('addData', 'Data');
