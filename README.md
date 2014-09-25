@@ -8,7 +8,7 @@ JobStreet.com Push Notification Service
 Using Composer:
 
 ```
-composer require jobstreet/js-push-notification dev-master
+composer require jobstreet/js-push-notification 1.0.0
 ```
 
 ##Usage
