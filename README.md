@@ -18,7 +18,7 @@ This is the minimal example that you'll need to have:
 ```
 require_once 'vendor/autoload.php';
 
-$client = new Client(array(
+$client = new JSPNClient(array(
     'applicationId' => 'YOUR_APPLICATION_ID',
     'isSandbox'     => true
 ));
@@ -45,7 +45,7 @@ define('JSPN_CONFIG_PATH', 'path/to/config.php');
 
 require_once 'vendor/autoload.php';
 
-$client = new Client();
+$client = new JSPNClient();
 ```
 
 config.php
@@ -60,7 +60,7 @@ return array(
 
 ##Documentation
 
-Coming Soon...
+More information and example are available at [JSPushNotification SDK Wiki](https://github.com/tekmin/JSPushNotification/wiki/JSPushNotification-SDK-Wiki)
 
 
 
