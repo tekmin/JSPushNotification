@@ -18,7 +18,7 @@ class JSPNApiHelperTest extends PHPUnit_Framework_TestCase {
 
     public function testGetBaseUrl() {
         $helper = JSPNApiHelper::getInstance();
-        $this->assertEquals('http://m-uat.jobstreet.com/api/Notification/', $helper->getBaseUrl());
+        $this->assertEquals('', $helper->getBaseUrl());
     }
 //    
 //    protected function tearDown() {

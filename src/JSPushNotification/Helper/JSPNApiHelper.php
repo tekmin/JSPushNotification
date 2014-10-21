@@ -17,8 +17,8 @@ class JSPNApiHelper {
      * @var base domain for different environment
      */
     public static $DOMAIN_MAP = array(
-        'live'  => 'https://myjobstreet.jobstreet.com/mobile-api/Notification/',
-        'sandbox'   => 'http://m-uat.jobstreet.com/api/Notification/'
+        'live'  => '',
+        'sandbox'   => ''
     );
     
     /**
