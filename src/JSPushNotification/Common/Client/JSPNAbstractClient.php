@@ -73,12 +73,7 @@ abstract class JSPNAbstractClient {
     protected function getClient() {
         if(!$this->client) {
             $apiHelper = JSPNApiHelper::getInstance();
-            $this->client = new GuzzleClient($apiHelper->getBaseUrl(), array(
-                'request.options' => array(
-                    'timeout'         => 10,
-                    'connect_timeout' => 5
-                )
-            ));
+            $this->client = new GuzzleClient($apiHelper->getBaseUrl());
         }
         
         return $this->client;
